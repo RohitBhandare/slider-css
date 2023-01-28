@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+        background: rgb(220, 214, 214);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .slider
+    {
+       
+        position: relative;
+    }
+    .pic{
+        display: none;
+    }
+    img{
+
+        top: 0;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        background-size: cover;
+        
+
+    }
+    button
+    {
+        background:  #fff;
+        padding: 20px;
+        position: absolute;
+        top: 10%;
+        
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        opacity: 0.6;;
+        font-size: larger;
+        font-weight: lighter;
+    }
+    button:hover
+    {
+        background: rgb(35, 34, 34);
+    }
+    .btn-right
+    {
+        top:40%;
+        right: 0px;
+    }
+    .btn-left
+    {
+        top:40%;
+        left: 0px;
+    }
+</style>
+<body>
+    <div class="slider">
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?universe/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?computer/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?animal/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?sun/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?earth/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?universe/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?universe/" alt="crypto" alt="" class="pic"></img>
+        <img src="https://source.unsplash.com/random/?nature/" alt="crypto" alt="" class="pic"></img>
+        <button class="btn-right" onclick="nextPic(-1)"> > </button>
+        <button class="btn-left" onclick="nextPic(1)"> < </button>
+    </div>
+</body>
+
+<script>
+
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function nextPic(n) {
+//   showDivs(slideIndex += n);
+// }
+
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("pic");
+//   if (n > x.length)
+//    {
+//      slideIndex = 1
+// }
+//   if (n < 1) {
+//     slideIndex = x.length
+// }
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//   }
+//   x[slideIndex-1].style.display = "block";
+// } 
+var counter=1;
+showPics(counter);
+function nextPic(n)
+{
+    showPics(counter+=n)
+}
+function showPics(n)
+{   var i;
+    var x=document.getElementsByClassName("pic");
+    if(n<1)
+    {
+        counter=x.length;
+    }
+    if(n>x.length)
+    {
+        counter=1;
+    }
+    for(i=0;i<x.length;i++)
+    {
+        x[i].style.display="none";
+    }
+    x[counter-1].style.display="block";
+}
+
+
+
+
+
+
+// var myIndex = 0;
+// carousel();
+
+// function carousel() {
+//   var i;
+//   var x = document.getElementsByClassName("pic");
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//   }
+//   myIndex++;
+//   if (myIndex > x.length) {myIndex = 1}    
+//   x[myIndex-1].style.display = "block";  
+//   setTimeout(carousel, 2000); // Change image every 2 seconds
+// }
+</script>
+</html>
